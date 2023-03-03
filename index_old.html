@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="src/base.css">
+    <link rel="stylesheet" href="src/style.css">
+
+    <title>Квиз опрос</title>
+</head>
+<body>
+    <div class="wrapper">
+        <main>
+            <quiz-container>
+                <quiz-item>
+                    <h1 class="quiz_head">Начало квиз опроса (не обязательно)</h1>
+                    <button class="quiz_start">Начать!</button>
+                </quiz-item>
+                <quiz-item style="display: none;">
+                    <h1 class="quiz_head">Пример выбора варианта</h1>
+                    <div class="radio_selection">
+                        <div class="multy_selection_item"><input type="radio" name="quiz_1_2">Выбор 1</div>
+                        <div class="multy_selection_item"><input type="radio" name="quiz_1_2">Выбор 2</div>
+                        <div class="multy_selection_item"><input type="radio" name="quiz_1_2">Выбор 3</div>
+                    </div>
+                    <div class="quiz_descr">Мульти выбор с лимитом (2)</div>
+                    <div class="multy_selection" limit="2">
+                        <div class="multy_selection_item" onclick="this.children[0].checked = true"><input type="checkbox" name="quiz_1_2">Выбор 1</div>
+                        <div class="multy_selection_item" onclick="this.children[0].checked = true"><input type="checkbox" name="quiz_1_2">Выбор 2</div>
+                        <div class="multy_selection_item" onclick="this.children[0].checked = true"><input type="checkbox" name="quiz_1_2">Выбор 3</div>
+                        <div class="multy_selection_item" onclick="this.children[0].checked = true"><input type="checkbox" name="quiz_1_2">Выбор 4</div>
+                    </div>
+                    <button class="quiz_next_page">Вперед</button>
+                    <button class="quiz_pre_page">Назад</button>
+                </quiz-item>
+            </quiz-container>
+        </main>
+    </div>
+</body>
+</html>
