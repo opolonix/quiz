@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,30 +13,28 @@
 <body>
     <div class="wrapper">
         <main>
-            <quiz-container>
-                <quiz-item>
-                    <h1 class="quiz_head">Начало квиз опроса (не обязательно)</h1>
-                    <button class="quiz_start">Начать!</button>
-                </quiz-item>
-                <quiz-item style="display: none;">
-                    <h1 class="quiz_head">Пример выбора варианта</h1>
-                    <div class="radio_selection">
-                        <div class="multy_selection_item"><input type="radio" name="quiz_1_2">Выбор 1</div>
-                        <div class="multy_selection_item"><input type="radio" name="quiz_1_2">Выбор 2</div>
-                        <div class="multy_selection_item"><input type="radio" name="quiz_1_2">Выбор 3</div>
-                    </div>
-                    <div class="quiz_descr">Мульти выбор с лимитом (2)</div>
-                    <div class="multy_selection" limit="2">
-                        <div class="multy_selection_item" onclick="this.children[0].checked = true"><input type="checkbox" name="quiz_1_2">Выбор 1</div>
-                        <div class="multy_selection_item" onclick="this.children[0].checked = true"><input type="checkbox" name="quiz_1_2">Выбор 2</div>
-                        <div class="multy_selection_item" onclick="this.children[0].checked = true"><input type="checkbox" name="quiz_1_2">Выбор 3</div>
-                        <div class="multy_selection_item" onclick="this.children[0].checked = true"><input type="checkbox" name="quiz_1_2">Выбор 4</div>
-                    </div>
-                    <button class="quiz_next_page">Вперед</button>
-                    <button class="quiz_pre_page">Назад</button>
-                </quiz-item>
-            </quiz-container>
+            <quiz-container></quiz-container>
         </main>
     </div>
+    
+    <script src="js/script.js"></script>
+    <script>
+        quiz = new Quiz(document.querySelector("quiz-container"))
+        quiz.data = [
+            [
+                [
+                    {"type": "page-data", "page-name": "start_page"},
+                    {"type": "text", "text-type": "header", "content": "Первая страница квиз опроса"},
+                    {"type": "text", "text-type": "description", "content": "Это демонстрация квиз опроса, создатель: <a href='https://github.com/opolonix'>Ополо</a>"},
+                    {"type": "btns", "btns": [{"type": "next-page", "content": "Вперед!", event: () => {console.log('click start btn :)');}}]}
+                ]
+            ]
+        ]
+        // quiz.startPage = 0
+        quiz.load()
+        // quiz.page('start_page')
+        // quiz.this_page()
+        // quiz.openPage('start_page')
+    </script>
 </body>
 </html>
